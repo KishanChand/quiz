@@ -8,12 +8,14 @@ import { QuestionscreenComponent } from './questionscreen/questionscreen.compone
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ResultscreenComponent } from './resultscreen/resultscreen.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomescreenComponent,
-    QuestionscreenComponent
+    QuestionscreenComponent,
+    ResultscreenComponent
   ],
   imports: [
     BrowserModule,

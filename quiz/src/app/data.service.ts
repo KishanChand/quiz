@@ -12,4 +12,8 @@ export class DataService {
   getCategory() {
 	  return this.http.get('https://opentdb.com/api_category.php');
   }
+  
+  getQuestions(id) {
+	  return this.http.post(`https://opentdb.com/api.php?amount=10&category=${id}`, '');
+  }
 }

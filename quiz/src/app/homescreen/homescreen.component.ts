@@ -10,14 +10,14 @@ import { Router } from '@angular/router';
 })
 export class HomescreenComponent implements OnInit {
 	categoryOptions:any = [];
-  constructor(private categoryData:DataService) { 
-	this.categoryData.getCategory().subscribe(result => {
-		console.log(result.trivia_categories, '++');
-		this.categoryOptions = result.trivia_categories;
-	})
+  constructor(private categoryData:DataService, private router:Router) { 
+	
   }
 
   ngOnInit(): void {
+	  this.categoryData.getCategory().subscribe(result => {
+		this.categoryOptions = result.trivia_categories;
+	});
   }
   
   loginForm = new FormGroup({
@@ -29,8 +29,8 @@ export class HomescreenComponent implements OnInit {
   get category(){return this.loginForm.get('category')}
   
   userLogin() {
-	  console.log(this.loginForm.value, 'this category');
-	  //this.router.navigate(['./questions']);
+	  localStorage.setItem('userInfo', JSON.stringify(this.loginForm.value));
+	  this.router.navigate(['./questions']);
   }
   
 }
