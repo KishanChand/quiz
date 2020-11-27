@@ -6,15 +6,6 @@
     <input type="text" name="username" formControlName="username" class="form-control" placeholder="">
 	<span *ngIf="username.invalid && username.touched" class="error">Please enter username</span>
   </div>
-  <div class="form-group mb-4">
-    <label for="category">Select Category</label>
-    <select name="category" formControlName="category" class="form-control">
-      <option *ngFor="let categorys of categoryOptions" [ngValue]="categorys.id">
-		{{categorys.name}}
-	  </option>
-    </select>
-	<span *ngIf="category.invalid && category.touched" class="error">Please Select category</span>
-  </div>
   <div class="text-center mt-4">
 	<button [disabled]="loginForm.invalid" (click)="userLogin()" type="button" class="btn btn-primary">Start Quiz</button>
   </div>

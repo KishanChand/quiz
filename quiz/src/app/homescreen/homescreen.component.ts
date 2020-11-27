@@ -9,15 +9,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./homescreen.component.css']
 })
 export class HomescreenComponent implements OnInit {
-	categoryOptions:any = [];
   constructor(private categoryData:DataService, private router:Router) { 
 	
   }
 
   ngOnInit(): void {
-	  this.categoryData.getCategory().subscribe(result => {
-		this.categoryOptions = result.trivia_categories;
-	});
+	
   }
   
   loginForm = new FormGroup({
