@@ -1,0 +1,12 @@
+<h5 class="text-center mb-4">Please fill the below details to start quiz!!</h5>
+
+<form [formGroup]="loginForm" class="loginForm">
+  <div class="form-group mb-4">
+    <label for="username">User Name</label>
+    <input type="text" name="username" formControlName="username" class="form-control" placeholder="">
+	<span *ngIf="username.invalid && username.touched" class="error">Please enter username</span>
+  </div>
+  <div class="text-center mt-4">
+	<button [disabled]="loginForm.invalid" (click)="userLogin()" type="button" class="btn btn-primary">Start Quiz</button>
+  </div>
+</form>

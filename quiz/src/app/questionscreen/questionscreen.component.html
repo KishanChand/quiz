@@ -1,0 +1,24 @@
+<div class="questionScreen">
+<h4>{{username | titlecase}}</h4>
+<div class="questionSec">
+<!--<div class="loader"></div>-->
+<div *ngFor="let item of question; let i=index" class="question_{{i}} mb-5 hide">
+	<p>{{item.question}}</p>
+	<div *ngFor="let data of item.incorrect_answers; let n=index">
+		<div class="form-check">
+          <input class="form-check-input" type="radio" name="radioBtn_{{i}}" id="{{data}}_{{i}}" value="{{data}}">
+          <label class="form-check-label" for="{{data}}_{{i}}">
+            {{data}}
+          </label>
+        </div>
+	</div>
+	<div class="answer mt-4 hide">
+	<p class="m-0">correct answer is <span>{{item.correct_answer}}</span></p>
+	</div>
+</div>
+<div class="text-right mr-2 mb-3">
+	<button (click)="next()" type="button" class="btn btn-primary">Next</button>
+	<button [ngClass]="(currentQuestion != totalQustion)?'hide':'show'" (click)="submit()" type="button" class="btn btn-success ml-3">Submit</button>
+</div>
+</div>
+</div>
